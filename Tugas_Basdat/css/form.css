@@ -1,0 +1,49 @@
+/* CSS Document */
+
+html {
+	height: 100%;
+}
+h2 {
+	text-align: center;
+	margin-bottom: 20px;
+}
+form {
+	margin-top: 20px;
+}
+input[type=text], input[type=date] {
+	width: 100%;
+	padding: 5px 10px;
+	margin: 8px 0;
+	margin-left: 10px;
+	box-sizing: border-box;
+	border: 3px solid #ccc;
+	-webkit-transition: 0.5s;
+	transition: 0.5s;
+	outline: none;
+}
+input[type=text]:focus {
+	border: 3px solid #555;
+}
+input[type=submit] {
+	width: 20%;
+	font-size: 1em;
+	padding: 10px;
+	color: #000;
+	margin-top: 20px;
+	border: 2px solid #06D85F;
+	border-radius: 20px/50px;
+	text-decoration: none;
+	cursor: pointer;
+	transition: all 0.3s ease-out;
+}
+input[type=submit]:hover {
+	background: #06D85F;
+}
+select {
+	width: 100%;
+	padding: 5px 10px;
+	margin: 8px 0;
+	margin-left: 10px;
+	box-sizing: border-box;
+	border: 3px solid #ccc;
+}
