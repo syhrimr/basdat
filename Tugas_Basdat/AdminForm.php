@@ -23,8 +23,6 @@
 								$('#result').html('<span class="success" style="color:green">Available</span>');
 							}else if(responseText > 0) {
 								$('#result').html('<span class="error" style="color:red">NRP already taken</span>');
-							} else {
-								alert('Problem with mysql query');
 							}
 						}
 					});

@@ -12,7 +12,14 @@
 		$Tanggal = $_POST['Tanggal'];
 		$Doswal = $_POST['Doswal'];
 		
-		$putdata = "INSERT INTO _mahasiswa (NRP, Nama, Asal, Tanggal, Doswal) VALUES ('$NRP', '$Nama', '$Asal', '$Tanggal', '$Doswal')";
+		$checkNIP = "SELECT NIP From _doswal WHERE NamaD = '$Doswal'";
+		$checkquery = mysql_query ($checkNIP, $link);
+		
+		while($row = mysql_fetch_array($checkquery)) {
+			$NIP = $row['NIP'];
+		}
+		
+		$putdata = "INSERT INTO _mahasiswa (NRP, Nama, Asal, Tanggal, NIP) VALUES ('$NRP', '$Nama', '$Asal', '$Tanggal', '$NIP')";
 		$dataquery = mysql_query ($putdata, $link);
 		
 		if (!$dataquery) {
@@ -22,8 +29,8 @@
 		}
 	?>
 	<br><br>
-	<a href="asMhsForm.php">Input Lagi</a>
+	<a href="AdminForm.php">Input Lagi</a>
 	<br><br>
-	<a href="asMhs.php">Kembali ke Main Menu</a> 
+	<a href="admin.php">Kembali ke Main Menu</a> 
 </body>
 </html>

@@ -1,9 +1,10 @@
 <?php
-	include 'conn-mysqli.php';
+	include 'connect.php';
 		
-    $nrp = $dbConnection->real_escape_string($_POST['NRP']);
-    $sqlUser = 'SELECT NRP FROM _mahasiswa WHERE NRP = "'.$nrp.'"';
-    $resUser = $dbConnection->query($sqlUser);
+    $nrp = $_POST['NRP'];
+    $sqlUser = "SELECT NRP FROM _mahasiswa WHERE NRP = '$nrp'";
+    $resUser = mysql_query($sqlUser);
+	
     if($resUser === false) {
         trigger_error('Error: ' . $dbConnection->error, E_USER_ERROR);
     } else {
